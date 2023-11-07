@@ -1,7 +1,7 @@
 <script setup lang="ts">
 //
 </script>
-
+//修改样式
 <template>
   <view class="index">index</view>
   <div class="flex justify-center h-100 items-center">
