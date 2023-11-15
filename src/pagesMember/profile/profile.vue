@@ -20,6 +20,40 @@ const getMemberProfileData = async () => {
 onLoad(() => {
   getMemberProfileData()
 })
+//修改头像
+const onAvatarChange = () => {
+  // 调⽤拍照/选择图⽚
+  uni.chooseMedia({
+    // ⽂件个数
+    count: 1,
+    // ⽂件类型
+    mediaType: ['image'],
+    success: (res) => {
+      // 本地路径
+      const { tempFilePath } = res.tempFiles[0]
+      // ⽂件上传
+      uni.uploadFile({
+        url: '/user/profile/avatar',
+        name: 'file', // 后端数据字段名
+        filePath: tempFilePath, // 新头像
+        success: (res) => {
+          // 判断状态码是否上传成功
+          if (res.statusCode === 200) {
+            // 提取头像
+            const avatar = JSON.parse(res.data).result
+            // 当前⻚⾯更新头像
+            profile.value!.avatar = avatar
+            // 更新 Store 头像
+            memberStore.profile!.avatar = avatar
+            uni.showToast({ icon: 'success', title: '更新成功' })
+          } else {
+            uni.showToast({ icon: 'error', title: '出现错误' })
+          }
+        }
+      })
+    }
+  })
+}
 </script>
 //修改样式
 <template>
