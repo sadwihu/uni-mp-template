@@ -8,7 +8,7 @@ export function createApp() {
   const app = createSSRApp(App)
   app.use(pinia)
   return {
-    app
-    //pinia //此处必须将Pinia返回
+    app,
+    pinia //此处必须将Pinia返回
   }
 }
