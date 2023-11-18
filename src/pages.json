@@ -20,9 +20,9 @@
     {
       "path": "pages/my/my",
       "style": {
-        "navigationBarTitleText": "我的",
         "navigationStyle": "custom",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "我的"
       }
     },
     {
@@ -47,6 +47,12 @@
       "path": "pages/hot/hot",
       "style": {
         "navigationBarTitleText": "热门推荐"
+      }
+    },
+    {
+      "path": "pages/goods/goods",
+      "style": {
+        "navigationBarTitleText": "商品"
       }
     }
   ],
@@ -108,11 +114,23 @@
             "navigationBarTextStyle": "white",
             "navigationBarTitleText": "个人信息"
           }
+        },
+        {
+          "path": "address/address",
+          "style": {
+            "navigationBarTitleText": "地址管理"
+          }
+        },
+        {
+          "path": "address/address-form",
+          "style": {
+            "navigationBarTitleText": "编辑地址"
+          }
         }
       ]
     }
   ],
-  //分包预下载规则
+  // 分包预下载规则
   "preloadRule": {
     "pages/my/my": {
       "network": "all",
