@@ -109,12 +109,12 @@ const gotoPayment = () => {
             <view class="goods">
               <!-- 选中状态 -->
               <text @tap="onChangeSelected(item)" class="checkbox" :class="{ checked: item.selected }"></text>
-              <navigator :url="`/pages/goods/goods?id=${item.id}`" hover-class="none" class="navigator">
+              <navigator :url="`/pages/goods/goods?id=${item.goodsId}`" hover-class="none" class="navigator">
                 <image mode="aspectFill" class="picture" :src="item.picture"></image>
                 <view class="meta">
                   <view class="name ellipsis">{{ item.name }}</view>
                   <view class="attrsText ellipsis">{{ item.attrsText }}</view>
-                  <view class="price">7{{ item.price }}</view>
+                  <view class="price">{{ item.price }}</view>
                 </view>
               </navigator>
               <!-- 商品数量 -->
